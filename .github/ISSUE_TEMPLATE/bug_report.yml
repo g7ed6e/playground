@@ -1,0 +1,103 @@
+name: Bug Report
+description: Report a bug
+title: ""
+# assignees:
+#   - octocat
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  
+  - type: input
+    id: version
+    attributes:
+      label: CoreWCF version
+      description: Which version are you using?
+      placeholder: ex. 1.0.0
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Describe expected behavior
+      description: What behavior did you expect to happen?
+      # placeholder: Tell us what you see!
+      # value: "A bug happened!"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Describe actual behavior
+      description: What behavior happenned?
+      # placeholder: Tell us what you see!
+      # value: "A bug happened!"
+    validations:
+      required: true      
+
+  - type: dropdown
+    id: binding
+    attributes:
+      label: Which binding
+      description: Which binding are you using?
+      options:
+        - NetTcp
+        - BasicHttp
+        - WsHttp
+        - WebHttp
+        - NetNamedPipe
+        - Other
+    validations:
+      required: true  
+
+  - type: dropdown
+    id: security
+    attributes:
+      label: Which security
+      description: Which security are you using?
+      options:
+        - None
+        - Transport
+        - TransportCredentialOnly
+        - TransportWithMessageCredential
+        - Message
+        - Other
+    validations:
+      required: true  
+
+  - type: dropdown
+    id: os-platform
+    attributes:
+      label: Which os platform
+      description: Which platform are you using?
+      options:
+        - windows
+        - linux
+        - macOS
+    validations:
+      required: true
+          
+  - type: textarea
+    id: code-snippet
+    attributes:
+      label: Code snippet used to reproduce the issue
+      description: Please copy and paste configuration code. This will be automatically formatted into code, so no need for backticks.
+      render: c#
+
+  - type: textarea
+    id: stacktrace
+    attributes:
+      label: Stacktrace if any
+      description: Please copy and paste stack trace. This will be automatically formatted, so no need for backticks.
+      render: shell      
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Duplicate ?
+      options:
+        - label: I have searched issues and did not find other issues reporting this bug.
+          required: true
